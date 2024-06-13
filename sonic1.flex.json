@@ -4,6 +4,31 @@
     "node": "da472ab9-f363-45e6-8ee3-a83fd70d6d9c",
     "objects": [
         {
+            "format": "Sonic 1.js",
+            "name": "HUD Life Counter Icon",
+            "palettes": [
+                {
+                    "path": "palette/Sonic.bin",
+                    "length": 1
+                }
+            ],
+            "art": {
+                "path": "artnem/HUD - Life Counter Icon.nem",
+                "compression": "Nemesis",
+                "offset": 0
+            },
+            "mappings": {
+                "path": "_maps/HUD.asm",
+                "label": ""
+            },
+            "dplcs": {
+                "enabled": false,
+                "path": "",
+                "label": ""
+            },
+            "uuid": "c9ab6edc-8d58-40d9-91a2-5be8ef630b06"
+        },
+        {
             "name": "Common",
             "children": [
                 {
@@ -14,7 +39,7 @@
                             "length": 1
                         }
                     ],
-                    "format": "Sonic 1.js",
+                    "format": "Sonic 2.js",
                     "art": {
                         "path": "artunc/Sonic.bin",
                         "compression": "Uncompressed",
@@ -283,7 +308,7 @@
                 }
             ],
             "isDirectory": true,
-            "expanded": false,
+            "expanded": true,
             "uuid": "14da472a-b9f3-4355-a6ce-e3a83fd70d6d"
         },
         {
