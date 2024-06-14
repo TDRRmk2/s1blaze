@@ -16,13 +16,13 @@ AddressSRAM	  = 3	; 0 = odd+even; 2 = even only; 3 = odd only
 ; Change to 0 to build the original version of the game, dubbed REV00
 ; Change to 1 to build the later vesion, dubbed REV01, which includes various bugfixes and enhancements
 ; Change to 2 to build the version from Sonic Mega Collection, dubbed REVXB, which fixes the infamous "spike bug"
-Revision	  = 1
+Revision	  = 2
 
 ZoneCount	  = 6	; discrete zones are: GHZ, MZ, SYZ, LZ, SLZ, and SBZ
 
-FixBugs		  = 0	; change to 1 to enable bugfixes
+FixBugs		  = 1	; change to 1 to enable bugfixes
 
-zeroOffsetOptimization = 0	; if 1, makes a handful of zero-offset instructions smaller
+zeroOffsetOptimization = 1	; if 1, makes a handful of zero-offset instructions smaller
 
 	include "MacroSetup.asm"
 	include	"Constants.asm"
