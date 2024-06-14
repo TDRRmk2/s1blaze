@@ -213,6 +213,9 @@ loc_1309A:
 		neg.w	d1
 		cmp.w	d1,d0
 		bgt.s	loc_130A6
+		add.w	d5,d0
+		cmp.w	d1,d0
+		ble.s	loc_130A6
 		move.w	d1,d0
 
 loc_130A6:
@@ -259,6 +262,9 @@ loc_13104:
 		add.w	d5,d0
 		cmp.w	d6,d0
 		blt.s	loc_1310C
+		sub.w	d5,d0
+		cmp.w	d6,d0
+		bge.s	loc_1310C
 		move.w	d6,d0
 
 loc_1310C:
