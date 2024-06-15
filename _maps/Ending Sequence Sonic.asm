@@ -1,83 +1,95 @@
-; ---------------------------------------------------------------------------
-; Sprite mappings - Sonic on the ending	sequence
-; ---------------------------------------------------------------------------
-Map_ESon_internal:	mappingsTable
-	mappingsTableEntry.w	M_ESon_Hold1
-	mappingsTableEntry.w	M_ESon_Hold2
-	mappingsTableEntry.w	M_ESon_Up
-	mappingsTableEntry.w	M_ESon_Conf1
-	mappingsTableEntry.w	M_ESon_Conf2
-	mappingsTableEntry.w	M_ESon_Leap1
-	mappingsTableEntry.w	M_ESon_Leap2
-	mappingsTableEntry.w	M_ESon_Leap3
+Map_c084: mappingsTable
+	mappingsTableEntry.w	Map_c084_0
+	mappingsTableEntry.w	Map_c084_1
+	mappingsTableEntry.w	Map_c084_2
+	mappingsTableEntry.w	Map_c084_3
+	mappingsTableEntry.w	Map_c084_4
+	mappingsTableEntry.w	Map_c084_5
+	mappingsTableEntry.w	Map_c084_6
+	mappingsTableEntry.w	Map_c084_7
 
-M_ESon_Hold1:	spriteHeader
-	spritePiece	-8, -$14, 3, 4, 0, 0, 0, 0, 0	; holding emeralds
-	spritePiece	-$10, $C, 4, 1, $C, 0, 0, 0, 0
-M_ESon_Hold1_End
+Map_c084_0:	spriteHeader
+ spritePiece -$11, $C, 4, 1, 0, 0, 0, 0, 0
+ spritePiece -9, -$14, 3, 4, 4, 0, 0, 0, 0
+ spritePiece -1, -$1C, 2, 1, $10, 0, 0, 0, 0
+ spritePiece $F, -$14, 1, 1, $12, 0, 0, 0, 0
+ spritePiece $F, 4, 1, 2, $13, 0, 0, 0, 0
+Map_c084_0_End
 
-M_ESon_Hold2:	spriteHeader
-	spritePiece	-$10, -4, 4, 2, $10, 0, 0, 0, 0 ; holding emeralds (glowing)
-	spritePiece	-8, -$14, 3, 4, 0, 0, 0, 0, 0
-	spritePiece	-$10, $C, 4, 1, $C, 0, 0, 0, 0
-M_ESon_Hold2_End
+Map_c084_1:	spriteHeader
+ spritePiece -$11, -4, 4, 3, $15, 0, 0, 0, 0
+ spritePiece -9, -$14, 3, 2, $21, 0, 0, 0, 0
+ spritePiece -1, -$1C, 2, 1, $27, 0, 0, 0, 0
+ spritePiece $F, -$14, 1, 1, $29, 0, 0, 0, 0
+ spritePiece $F, 4, 1, 2, $2A, 0, 0, 0, 0
+Map_c084_1_End
 
-M_ESon_Up:	spriteHeader
-	spritePiece	-8, -$14, 3, 2, $18, 0, 0, 0, 0 ; looking up
-	spritePiece	-$10, -4, 4, 3, $1E, 0, 0, 0, 0
-M_ESon_Up_End
+Map_c084_2:	spriteHeader
+ spritePiece -$10, -4, 4, 3, $2C, 0, 0, 0, 0
+ spritePiece -8, -$14, 3, 2, $38, 0, 0, 0, 0
+ spritePiece 0, -$1C, 2, 1, $3E, 0, 0, 0, 0
+ spritePiece $10, -$14, 1, 1, $40, 0, 0, 0, 0
+ spritePiece $10, 4, 1, 2, $41, 0, 0, 0, 0
+Map_c084_2_End
 
-M_ESon_Conf1:	spriteHeader
-	spritePiece	-8, -$14, 3, 2, $2A, 0, 0, 0, 0 ; confused
-	spritePiece	-$10, -4, 4, 3, $30, 0, 0, 0, 0
-M_ESon_Conf1_End
+Map_c084_3:	spriteHeader
+ spritePiece -$10, 0, 4, 3, $43, 0, 0, 0, 0
+ spritePiece $10, 8, 1, 1, $4F, 0, 0, 0, 0
+ spritePiece -8, -$18, 3, 3, $50, 0, 0, 0, 0
+Map_c084_3_End
 
-M_ESon_Conf2:	spriteHeader
-	spritePiece	-$10, -$14, 3, 2, $2A, 1, 0, 0, 0 ; confused #2
-	spritePiece	-$10, -4, 4, 3, $30, 1, 0, 0, 0
-M_ESon_Conf2_End
+Map_c084_4:	spriteHeader
+ spritePiece -$10, 0, 4, 3, $43, 0, 0, 0, 0
+ spritePiece $10, 8, 1, 1, $4F, 0, 0, 0, 0
+ spritePiece -$C, -$18, 3, 3, $50, 1, 0, 0, 0
+Map_c084_4_End
 
-M_ESon_Leap1:	spriteHeader
-	spritePiece	-$10, -$14, 2, 3, $3C, 0, 0, 0, 0 ; leaping
-	spritePiece	0, -$14, 2, 3, $3C, 1, 0, 0, 0
-	spritePiece	-$10, 4, 4, 2, $42, 0, 0, 0, 0
-M_ESon_Leap1_End
+Map_c084_5:	spriteHeader
+ spritePiece -$10, -$C, 4, 3, $59, 0, 0, 0, 0
+ spritePiece -$10, $C, 3, 1, $65, 0, 0, 0, 0
+ spritePiece -8, -$14, 2, 1, $68, 0, 0, 0, 0
+Map_c084_5_End
 
-M_ESon_Leap2:	spriteHeader
-	spritePiece	-8, -$4E, 4, 1, $4A, 0, 0, 0, 0 ; leaping #2
-	spritePiece	-$10, -$46, 4, 4, $4E, 0, 0, 0, 0
-	spritePiece	$10, -$46, 2, 2, $5E, 0, 0, 0, 0
-	spritePiece	$10, -$36, 1, 3, $62, 0, 0, 0, 0
-	spritePiece	-$10, -$26, 4, 1, $65, 0, 0, 0, 0
-	spritePiece	-8, -$1E, 3, 1, $69, 0, 0, 0, 0
-	spritePiece	-8, -$16, 2, 2, $6C, 0, 0, 0, 0
-M_ESon_Leap2_End
+Map_c084_6:	spriteHeader
+ spritePiece -$1C, $18, 2, 2, $6A, 0, 0, 0, 0
+ spritePiece -$14, -$18, 4, 4, $6E, 0, 0, 0, 0
+ spritePiece -$14, 8, 4, 2, $7E, 0, 0, 0, 0
+ spritePiece -$C, -$28, 4, 2, $86, 0, 0, 0, 0
+ spritePiece -$C, $18, 3, 1, $8E, 0, 0, 0, 0
+ spritePiece -4, $20, 2, 1, $91, 0, 0, 0, 0
+ spritePiece $C, -$18, 2, 4, $93, 0, 0, 0, 0
+ spritePiece $C, 8, 2, 1, $9B, 0, 0, 0, 0
+Map_c084_6_End
 
-M_ESon_Leap3:	spriteHeader
-	spritePiece	-8, -$80, 4, 4, $70, 0, 0, 0, 0 ; leaping #3
-	spritePiece	-$20, -$70, 3, 4, $80, 0, 0, 0, 0
-	spritePiece	$18, -$70, 3, 4, $8C, 0, 0, 0, 0
-	spritePiece	$30, -$68, 3, 4, $98, 0, 0, 0, 0
-	spritePiece	$58, -$60, 4, 4, $A4, 0, 0, 0, 0
-	spritePiece	-$10, -$78, 1, 1, $B4, 0, 0, 0, 0
-	spritePiece	$18, -$80, 2, 2, $B5, 0, 0, 0, 0
-	spritePiece	-8, -$60, 4, 4, $B9, 0, 0, 0, 0
-	spritePiece	-$20, -$50, 3, 4, $C9, 0, 0, 0, 0
-	spritePiece	$38, -$48, 4, 4, $D5, 0, 0, 0, 0
-	spritePiece	$48, -$58, 2, 2, $E5, 0, 0, 0, 0
-	spritePiece	$58, -$40, 1, 3, $E9, 0, 0, 0, 0
-	spritePiece	-8, -$40, 4, 4, $EC, 0, 0, 0, 0
-	spritePiece	$18, -$48, 4, 4, $FC, 0, 0, 0, 0
-	spritePiece	$18, -$50, 3, 1, $10C, 0, 0, 0, 0
-	spritePiece	$30, -$28, 4, 2, $10F, 0, 0, 0, 0
-	spritePiece	$18, -$28, 3, 1, $117, 0, 0, 0, 0
-	spritePiece	-$28, -$28, 4, 4, $11A, 0, 0, 0, 0
-	spritePiece	-8, -$20, 4, 2, $12A, 0, 0, 0, 0
-	spritePiece	$28, -$20, 1, 1, $132, 0, 0, 0, 0
-	spritePiece	-$20, -$30, 2, 1, $133, 0, 0, 0, 0
-	spritePiece	-$38, -$18, 2, 2, $135, 0, 0, 0, 0
-	spritePiece	-$38, -8, 4, 1, $139, 0, 0, 0, 0
-	spritePiece	-8, -$10, 2, 3, $13D, 0, 0, 0, 0
-M_ESon_Leap3_End
+Map_c084_7:	spriteHeader
+ spritePiece 4, -$54, 2, 4, $9D, 0, 0, 0, 0
+ spritePiece -$1C, -$44, 4, 1, $A5, 0, 0, 0, 0
+ spritePiece $14, -$44, 1, 4, $A9, 0, 0, 0, 0
+ spritePiece $34, -$44, 2, 4, $AD, 0, 0, 0, 0
+ spritePiece $4C, -$44, 3, 1, $B5, 0, 0, 0, 0
+ spritePiece -$14, -$3C, 3, 4, $B8, 0, 0, 0, 0
+ spritePiece $44, -$3C, 3, 3, $C4, 0, 0, 0, 0
+ spritePiece -$24, -$34, 2, 2, $CD, 0, 0, 0, 0
+ spritePiece 4, -$34, 2, 4, $D1, 0, 0, 0, 0
+ spritePiece $1C, -$34, 3, 4, $D9, 0, 0, 0, 0
+ spritePiece $14, -$24, 1, 4, $E5, 0, 0, 0, 0
+ spritePiece $34, -$24, 4, 3, $E9, 0, 0, 0, 0
+ spritePiece -$24, -$1C, 4, 4, $F5, 0, 0, 0, 0
+ spritePiece -4, -$1C, 1, 4, $105, 0, 0, 0, 0
+ spritePiece 4, -$14, 2, 4, $109, 0, 0, 0, 0
+ spritePiece $1C, -$14, 3, 4, $111, 0, 0, 0, 0
+ spritePiece $34, -$C, 1, 2, $11D, 0, 0, 0, 0
+ spritePiece $14, -4, 1, 4, $11F, 0, 0, 0, 0
+ spritePiece -$1C, 4, 4, 4, $123, 0, 0, 0, 0
+ spritePiece 4, $C, 2, 4, $133, 0, 0, 0, 0
+ spritePiece -$24, $1C, 1, 4, $13C, 0, 0, 0, 0
+ spritePiece -$2C, $24, 1, 4, $142, 0, 0, 0, 0
+ spritePiece -$1C, $24, 4, 3, $146, 0, 0, 0, 0
+ spritePiece 4, $2C, 2, 2, $152, 0, 0, 0, 0
+ spritePiece -$31, $33, 1, 3, $156, 0, 0, 0, 0
+ spritePiece -$24, $3C, 2, 1, $15B, 0, 0, 0, 0
+ spritePiece -$C, $3C, 3, 1, $15D, 0, 0, 0, 0
+ spritePiece -4, $44, 2, 2, $161, 0, 0, 0, 0
+Map_c084_7_End
 
 	even

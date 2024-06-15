@@ -1907,27 +1907,48 @@ Title_LowerEmblem:
 		rts
 
 ; from Clownacy's KiS2 disassembly
+; comments mark the lines I (TDRR) added, to make the animation
+; slower (but avoiding making it 30fps)
 LowerEmblem_Positions:
 	dc.w    0
 	dc.w   -1
+	dc.w   -2;
 	dc.w   -3
+	dc.w   -4;
 	dc.w   -6
+	dc.w   -8;
 	dc.w  -10
+	dc.w  -13;
 	dc.w  -16
+	dc.w  -20;
 	dc.w  -24
+	dc.w  -22;
 	dc.w  -20
+	dc.w  -19;
 	dc.w  -18
+	dc.w  -16;
 	dc.w  -14
+	dc.w  -14;
 	dc.w  -13
+	dc.w  -13;
 	dc.w  -12
+	dc.w  -12;
 	dc.w  -13
+	dc.w  -13;
 	dc.w  -14
+	dc.w  -13;
 	dc.w  -16
+	dc.w  -18;
 	dc.w  -20
+	dc.w  -22;
 	dc.w  -24
+	dc.w  -23;
 	dc.w  -22
+	dc.w  -22;
 	dc.w  -21
+	dc.w  -21;
 	dc.w  -22
+	dc.w  -23;
 	dc.w  -24
 LowerEmblem_Positions_End:
 	even

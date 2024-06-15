@@ -92,7 +92,21 @@ ESon_Wait3:
 
 Obj87_Animate:	; Rountine 4, $A, $E, $12
 		lea	(AniScript_ESon).l,a1
-		jmp	(AnimateSprite).l
+		jsr	(AnimateSprite).l
+		cmpi.b #6, obFrame(a0)
+		beq	.JumpFrame1
+		cmpi.b #7, obFrame(a0)
+		beq .JumpFrame2
+		bra	.ret
+.JumpFrame1:
+		move.w #0, obVelY(a0)
+		move.w #400, obY(a0)
+		bra .ret
+.JumpFrame2:
+		move.w #0, obVelY(a0)
+		move.w #360, obY(a0)
+.ret:
+		rts
 ; ===========================================================================
 
 Obj87_Leap:	; Routine $10
@@ -107,7 +121,7 @@ Obj87_Leap:	; Routine $10
 		move.b	#5,obFrame(a0)
 		move.b	#2,obAnim(a0)	; use "leaping"	animation
 		move.b	#id_EndSTH,(v_endlogo).w ; load "SONIC THE HEDGEHOG" object
-		bra.s	Obj87_Animate
+		bra		Obj87_Animate
 ; ===========================================================================
 
 ESon_Wait4:
