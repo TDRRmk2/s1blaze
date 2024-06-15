@@ -552,6 +552,7 @@ ArtTile_Title_Foreground:	equ $200
 ArtTile_Title_Sonic:		equ $300
 ArtTile_Title_Trademark:	equ $510
 ArtTile_Level_Select_Font:	equ $680
+ArtTile_Title_Blaze_Emb:	equ $68A
 
 ; Continue Screen
 ArtTile_Continue_Sonic:		equ $500

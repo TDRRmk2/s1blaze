@@ -10,18 +10,18 @@ PSBTM:
 		bra.w	DisplaySprite
 ; ===========================================================================
 PSB_Index:	dc.w PSB_Main-PSB_Index
-		dc.w PSB_PrsStart-PSB_Index
+		dc.w PSB_Copyright-PSB_Index
 		dc.w PSB_Exit-PSB_Index
 ; ===========================================================================
 
 PSB_Main:	; Routine 0
 		addq.b	#2,obRoutine(a0)
-		move.w	#$D0,obX(a0)
+		move.w	#$E0,obX(a0)
 		move.w	#$130,obScreenY(a0)
 		move.l	#Map_PSB,obMap(a0)
 		move.w	#make_art_tile(ArtTile_Title_Foreground,0,0),obGfx(a0)
 		cmpi.b	#2,obFrame(a0)	; is object "PRESS START"?
-		blo.s	PSB_PrsStart	; if yes, branch
+		blo.s	PSB_Copyright	; if yes, branch
 
 		addq.b	#2,obRoutine(a0)
 		cmpi.b	#3,obFrame(a0)	; is the object	"TM"?
@@ -35,6 +35,9 @@ PSB_Exit:	; Routine 4
 		rts	
 ; ===========================================================================
 
-PSB_PrsStart:	; Routine 2
-		lea	(Ani_PSBTM).l,a1
-		bra.w	AnimateSprite	; "PRESS START" is animated
+PSB_Copyright:	; Routine 2
+		move.w  #300, obX(a0)
+		move.w	#$138, obScreenY(a0)
+		move.b  #0, obFrame(a0)
+		addq.b  #2, obRoutine(a0)
+		rts

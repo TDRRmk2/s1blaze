@@ -19,7 +19,11 @@ DeformLayers:
 		bsr.w	ScrollHoriz
 		bsr.w	ScrollVertical
 		bsr.w	DynamicLevelEvents
+		move.b	(v_gamemode).w, d0
+		cmpi.b	#id_Title, d0
+		beq		.noscrollfgy
 		move.w	(v_screenposy).w,(v_scrposy_vdp).w
+	.noscrollfgy:
 		move.w	(v_bgscreenposy).w,(v_bgscrposy_vdp).w
 		moveq	#0,d0
 		move.b	(v_zone).w,d0

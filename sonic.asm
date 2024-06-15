@@ -1895,6 +1895,43 @@ Sega_GotoTitle:
 ; Title	screen
 ; ---------------------------------------------------------------------------
 
+Title_LowerEmblem:
+		move.w  (v_ttl_emblem_pos).w,d0
+		cmpi.w	#LowerEmblem_Positions_End-LowerEmblem_Positions,d0
+		bhs		.NoLower
+		lea		LowerEmblem_Positions, a1
+		move.w	0(a1,d0.w),(v_scrposy_vdp).w
+		addq.w	#2,d0
+		move.w	d0,(v_ttl_emblem_pos).w
+.NoLower:
+		rts
+
+; from Clownacy's KiS2 disassembly
+LowerEmblem_Positions:
+	dc.w    0
+	dc.w   -1
+	dc.w   -3
+	dc.w   -6
+	dc.w  -10
+	dc.w  -16
+	dc.w  -24
+	dc.w  -20
+	dc.w  -18
+	dc.w  -14
+	dc.w  -13
+	dc.w  -12
+	dc.w  -13
+	dc.w  -14
+	dc.w  -16
+	dc.w  -20
+	dc.w  -24
+	dc.w  -22
+	dc.w  -21
+	dc.w  -22
+	dc.w  -24
+LowerEmblem_Positions_End:
+	even
+
 GM_Title:
 		move.b	#bgm_Stop,d0
 		bsr.w	PlaySound_Special ; stop music
@@ -1944,6 +1981,9 @@ GM_Title:
 		bsr.w	NemDec
 		locVRAM	ArtTile_Title_Trademark*$20
 		lea	(Nem_TitleTM).l,a0 ; load "TM" patterns
+		bsr.w	NemDec
+		move.l  #$68A00002,(vdp_control_port).l  ; TODO: update this to use the locVRAM macro
+		lea (Nem_BlazeEmb).l,a0
 		bsr.w	NemDec
 		lea	(vdp_data_port).l,a6
 		locVRAM	ArtTile_Level_Select_Font*$20,4(a6)
@@ -2009,19 +2049,24 @@ Tit_LoadText:
 		move.b	#id_PSBTM,(v_pressstart).w ; load "PRESS START BUTTON" object
 		;clr.b	(v_pressstart+obRoutine).w ; The 'Mega Games 10' version of Sonic 1 added this line, to fix the 'PRESS START BUTTON' object not appearing
 
-		if Revision<>0
-			tst.b   (v_megadrive).w	; is console Japanese?
-			bpl.s   .isjap		; if yes, branch
-		endif
+		;if Revision<>0
+		;	tst.b   (v_megadrive).w	; is console Japanese?
+		;	bpl.s   .isjap		; if yes, branch
+		;endif
 
-		move.b	#id_PSBTM,(v_titletm).w ; load "TM" object
-		move.b	#3,(v_titletm+obFrame).w
+		;move.b	#id_PSBTM,(v_titletm).w ; load "TM" object
+		;move.b	#3,(v_titletm+obFrame).w
 .isjap:
 		move.b	#id_PSBTM,(v_ttlsonichide).w ; load object which hides part of Sonic
 		move.b	#2,(v_ttlsonichide+obFrame).w
+        move.b  #id_BlazeEmb,($FFFFD140).w
 		jsr	(ExecuteObjects).l
 		bsr.w	DeformLayers
 		jsr	(BuildSprites).l
+		lea		v_ttlsonichide, a1
+		move.w	obScreenY(a1), d0
+		addi.w	#24, d0
+		move.w  d0, obScreenY(a1)
 		moveq	#plcid_Main,d0
 		bsr.w	NewPLC
 		move.w	#0,(v_title_dcount).w
@@ -2030,6 +2075,7 @@ Tit_LoadText:
 		ori.b	#$40,d0
 		move.w	d0,(vdp_control_port).l
 		bsr.w	PaletteFadeIn
+		move.w	#0,(v_ttl_emblem_pos).w
 
 Tit_MainLoop:
 		move.b	#4,(v_vbla_routine).w
@@ -2039,12 +2085,12 @@ Tit_MainLoop:
 		jsr	(BuildSprites).l
 		bsr.w	PalCycle_Title
 		bsr.w	RunPLC
+		bsr.w	Title_LowerEmblem
 		move.w	(v_player+obX).w,d0
 		addq.w	#2,d0
 		move.w	d0,(v_player+obX).w ; move Sonic to the right
 		cmpi.w	#$1C00,d0	; has Sonic object passed $1C00 on x-axis?
 		blo.s	Tit_ChkRegion	; if not, branch
-
 		move.b	#id_Sega,(v_gamemode).w ; go to Sega screen
 		rts	
 ; ===========================================================================
@@ -8316,6 +8362,8 @@ Eni_Title:	binclude	"tilemaps/Title Screen.eni" ; title screen foreground (mappi
 Nem_TitleFg:	binclude	"artnem/Title Screen Foreground.nem"
 		even
 Nem_TitleSonic:	binclude	"artnem/Title Screen Sonic.nem"
+		even
+Nem_BlazeEmb:   binclude    "artnem/Blaze Emblem.nem"    ; BLAZE THE CAT IN on title screen
 		even
 Nem_TitleTM:	binclude	"artnem/Title Screen TM.nem"
 		even

@@ -1,11 +1,36 @@
 {
     "Flex": 2,
     "name": "Sonic 1",
-    "node": "a84a36d5-9c11-4fd5-8774-732be37cd8ce",
+    "node": "c693bf90-88d4-41f3-a46a-43b624393568",
     "objects": [
         {
             "format": "Sonic 1.js",
-            "name": "object",
+            "name": "Blaze Emblem",
+            "palettes": [
+                {
+                    "path": "palette/Title Screen.bin",
+                    "length": 4
+                }
+            ],
+            "art": {
+                "path": "artnem/Blaze Emblem.nem",
+                "compression": "Nemesis",
+                "offset": 0
+            },
+            "mappings": {
+                "path": "_maps/Blaze Emblem.asm",
+                "label": ""
+            },
+            "dplcs": {
+                "enabled": false,
+                "path": "",
+                "label": ""
+            },
+            "uuid": "c693bf90-88d4-41f3-a46a-43b624393568"
+        },
+        {
+            "format": "Sonic 1.js",
+            "name": "Title screen Blaze",
             "palettes": [
                 {
                     "path": "palette/Title Screen.bin",

@@ -19,7 +19,7 @@ v_spritequeue:		ds.b	$400		; sprite display queue, in order of priority
 v_16x16:		ds.b	$1800		; 16x16 tile mappings
 
 v_sgfx_buffer:		ds.b	$2E0		; buffered Sonic graphics ($17 cells)
-			ds.b	$20		; unused
+v_ttl_emblem_pos	ds.b	$20		; unused
 v_tracksonic:		ds.b	$100		; position tracking data for Sonic
 v_hscrolltablebuffer:	ds.b	$380		; scrolling table data
 v_hscrolltablebuffer_end:
