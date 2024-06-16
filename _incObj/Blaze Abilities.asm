@@ -36,9 +36,12 @@ Blaze_Abilities:
 .DoHover:
 		move.b  #id_Hover, obAnim(a0)
 		bra	    .ret
-.DoAxel: ; TODO: fix axel jump sending you flying underwater
+.DoAxel:
 		move.b  #id_AxelT, obAnim(a0)
 		move.w  #Blaze_AxelSpd, obVelY(a0)
+		btst    #6, obStatus(a0)
+		beq		.ret
+		move.w  #Blaze_AxelSpd/2, obVelY(a0)
 		bra     .ret
 .DoAirDash:
 		move.w  (v_sonspeedmax).w, obVelX(a0)

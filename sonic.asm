@@ -1732,6 +1732,7 @@ PalLoad2:
 
 
 PalLoad3_Water:
+		rts
 		lea	(PalPointers).l,a1
 		lsl.w	#3,d0
 		adda.w	d0,a1
@@ -1751,6 +1752,7 @@ PalLoad3_Water:
 
 
 PalLoad4_Water:
+		rts
 		lea	(PalPointers).l,a1
 		lsl.w	#3,d0
 		adda.w	d0,a1
@@ -1768,6 +1770,7 @@ PalLoad4_Water:
 ; ===========================================================================
 
 		include	"_inc/Palette Pointers.asm"
+		include "_inc/WaterFilter.asm"
 
 ; ---------------------------------------------------------------------------
 ; Palette data
@@ -2685,13 +2688,12 @@ Level_LoadPal:
 		cmpi.b	#id_LZ,(v_zone).w ; is level LZ?
 		bne.s	Level_GetBgm	; if not, branch
 
-		moveq	#palid_LZSonWater,d0 ; palette number $F (LZ)
+		move.b	#0,(v_waterfilter_id).w ; (LZ)
 		cmpi.b	#3,(v_act).w	; is act number 3?
 		bne.s	Level_WaterPal	; if not, branch
-		moveq	#palid_SBZ3SonWat,d0 ; palette number $10 (SBZ3)
+		move.b	#1,(v_waterfilter_id).w ; (SBZ3)
 
 Level_WaterPal:
-		bsr.w	PalLoad3_Water	; load underwater palette
 		tst.b	(v_lastlamp).w
 		beq.s	Level_GetBgm
 		move.b	(v_lamp_wtrstat).w,(f_wtr_state).w
@@ -2740,6 +2742,7 @@ Level_SkipTtlCard:
 		jsr	(ConvertCollisionArray).l
 		bsr.w	ColIndexLoad
 		bsr.w	LZWaterFeatures
+		bsr		WaterFilter ; load underwater palette
 		move.b	#id_SonicPlayer,(v_player).w ; load Sonic object
 		tst.w	(f_demo).w
 		bmi.s	Level_ChkDebug
@@ -2805,22 +2808,11 @@ Level_Demo:
 		subq.b	#1,(v_btnpushtime2).w ; subtract 1 from duration
 		move.w	#1800,(v_demolength).w
 		tst.w	(f_demo).w
-		bpl.s	Level_ChkWaterPal
+		bpl.s	Level_Delay;Level_ChkWaterPal
 		move.w	#540,(v_demolength).w
 		cmpi.w	#4,(v_creditsnum).w
-		bne.s	Level_ChkWaterPal
+		bne.s	Level_Delay;Level_ChkWaterPal
 		move.w	#510,(v_demolength).w
-
-Level_ChkWaterPal:
-		cmpi.b	#id_LZ,(v_zone).w ; is level LZ/SBZ3?
-		bne.s	Level_Delay	; if not, branch
-		moveq	#palid_LZWater,d0 ; palette $B (LZ underwater)
-		cmpi.b	#3,(v_act).w	; is level SBZ3?
-		bne.s	Level_WtrNotSbz	; if not, branch
-		moveq	#palid_SBZ3Water,d0 ; palette $D (SBZ3 underwater)
-
-Level_WtrNotSbz:
-		bsr.w	PalLoad4_Water
 
 Level_Delay:
 		move.w	#3,d1
@@ -2850,6 +2842,7 @@ Level_ClrCardArt:
 		jsr	(AddPLC).l	; load animal gfx (level no. + $15)
 
 Level_StartGame:
+		bsr		WaterFilter ; load underwater palette
 		bclr	#7,(v_gamemode).w ; subtract $80 from mode to end pre-level stuff
 
 ; ---------------------------------------------------------------------------
