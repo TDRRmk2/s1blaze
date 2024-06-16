@@ -1,8 +1,33 @@
 {
     "Flex": 2,
     "name": "Sonic 1",
-    "node": "f719f1bf-6821-475b-8385-3aec20f717ea",
+    "node": "b2ad6548-d5f0-46f3-aae7-fc0cca3d5344",
     "objects": [
+        {
+            "format": "Sonic 1.js",
+            "name": "Flame",
+            "palettes": [
+                {
+                    "path": "palette/Sonic.bin",
+                    "length": 1
+                }
+            ],
+            "art": {
+                "path": "artnem/Flame.nem",
+                "compression": "Nemesis",
+                "offset": 0
+            },
+            "mappings": {
+                "path": "_maps/Flame.asm",
+                "label": "Flame"
+            },
+            "dplcs": {
+                "enabled": false,
+                "path": "",
+                "label": ""
+            },
+            "uuid": "b2ad6548-d5f0-46f3-aae7-fc0cca3d5344"
+        },
         {
             "format": "Sonic 1.js",
             "name": "Ending Blaze",

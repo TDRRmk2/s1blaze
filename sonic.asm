@@ -6653,7 +6653,7 @@ Map_LWall:	include	"_maps/Wall of Lava.asm"
 		include	"_anim/Moto Bug.asm"
 Map_Moto:	include	"_maps/Moto Bug.asm"
 		include	"_incObj/4F.asm"
-
+		include "_anim/Flame.asm"
 		include	"_incObj/50 Yadrin.asm"
 		include	"_anim/Yadrin.asm"
 Map_Yad:	include	"_maps/Yadrin.asm"
@@ -6863,6 +6863,7 @@ Sonic_MdJump:
 loc_12E5C:
 		bsr.w	Sonic_JumpAngle
 		bsr.w	Sonic_Floor
+		bsr		Blaze_Abilities
 		rts	
 ; ===========================================================================
 
@@ -6889,6 +6890,7 @@ Sonic_MdJump2:
 loc_12EA6:
 		bsr.w	Sonic_JumpAngle
 		bsr.w	Sonic_Floor
+		bsr		Blaze_Abilities
 		rts	
 
 		include	"_incObj/Sonic Move.asm"
@@ -6913,7 +6915,8 @@ loc_12EA6:
 
 locret_13302:
 		rts	
-
+		
+		include "_incObj/Blaze Abilities.asm"
 		include	"_incObj/Sonic LevelBound.asm"
 		include	"_incObj/Sonic Roll.asm"
 		include	"_incObj/Sonic Jump.asm"
@@ -8242,6 +8245,7 @@ Map_SS_Down:	include	"_maps/SS DOWN Block.asm"
 
 		include	"_incObj/21 HUD.asm"
 Map_HUD:	include	"_maps/HUD.asm"
+Map_FlameB: include "_maps/Flame.asm"
 
 ; ---------------------------------------------------------------------------
 ; Add points subroutine
@@ -8680,6 +8684,7 @@ Nem_BigFlash:	binclude	"artnem/Giant Ring Flash.nem"
 		even
 Nem_Bonus:	binclude	"artnem/Hidden Bonuses.nem" ; hidden bonuses at end of a level
 		even
+Nem_Flame:	binclude	"artnem/Flame.nem"
 ; ---------------------------------------------------------------------------
 ; Compressed graphics - continue screen
 ; ---------------------------------------------------------------------------

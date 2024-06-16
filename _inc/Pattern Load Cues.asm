@@ -52,6 +52,7 @@ PLC_Main:	dc.w ((PLC_Mainend-PLC_Main-2)/6)-1
 		plcm	Nem_Lamp,   ArtTile_Lamppost      ; lamppost
 		plcm	Nem_Hud,    ArtTile_HUD           ; HUD
 		plcm	Nem_Lives,  ArtTile_Lives_Counter ; lives counter
+		plcm	Nem_Flame,	ArtTile_Flame		  ; flames from Blaze's abilities
 		plcm	Nem_Ring,   ArtTile_Ring          ; rings
 		plcm	Nem_Points, ArtTile_Points        ; points from enemy
 PLC_Mainend:
