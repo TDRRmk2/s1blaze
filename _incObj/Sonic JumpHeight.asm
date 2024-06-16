@@ -6,6 +6,8 @@
 
 
 Sonic_JumpHeight:
+		cmpi.b  #id_AxelT, obAnim(a0)
+		beq		locret_134C2
 		tst.b	objoff_3C(a0)
 		beq.s	loc_134C4
 		move.w	#-$400,d1

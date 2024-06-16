@@ -1887,6 +1887,7 @@ Sega_WaitEnd:
 		beq.s	Sega_WaitEnd	; if not, branch
 
 Sega_GotoTitle:
+		jsr		MegaPCM_StopPlayback
 		move.b	#id_Title,(v_gamemode).w ; go to title screen
 		rts	
 ; ===========================================================================
