@@ -122,6 +122,8 @@ loc_A246:
 loc_A25C:
 		btst	#5,obStatus(a0)
 		beq.s	Mon_Animate
+		cmpi.b	#id_Roll, obAnim(a1)
+		beq		Solid_NotPushing
 		move.w	#1,obAnim(a1)	; clear obAnim and set obNextAni to 1
 
 loc_A26A:

@@ -205,6 +205,8 @@ Solid_SideAir:
 Solid_Ignore:
 		btst	#5,obStatus(a0)	; is Sonic pushing?
 		beq.s	Solid_Debug	; if not, branch
+		cmpi.b	#id_Roll, obAnim(a1)
+		beq		Solid_NotPushing
 		move.w	#id_Run,obAnim(a1) ; use running animation
 
 Solid_NotPushing:
