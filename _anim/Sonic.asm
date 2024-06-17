@@ -38,6 +38,7 @@ ptr_AxelT:  dc.w BlzAni_AxelT-Ani_Sonic
 ptr_Fall:	dc.w BlzAni_Fall-Ani_Sonic
 ptr_Hover:	dc.w BlzAni_Hover-Ani_Sonic
 ptr_AirDash:	dc.w BlzAni_AirDash-Ani_Sonic
+ptr_TapWait:	dc.w BlzAni_TapWait-Ani_Sonic
 
 SonAni_Walk:	dc.b $FF, fr_Walk13, fr_Walk14,	fr_Walk15, fr_Walk16, fr_Walk11, fr_Walk12, afEnd
 		even
@@ -111,6 +112,8 @@ BlzAni_Hover:	dc.b 5, $59, $5A, afEnd
 		even
 BlzAni_AirDash: dc.b 3, $59, afEnd
 		even
+BlzAni_TapWait:	dc.b $17, fr_Wait2, fr_Wait3, afEnd
+		even
 
 id_Walk:	equ (ptr_Walk-Ani_Sonic)/2	; 0
 id_Run:		equ (ptr_Run-Ani_Sonic)/2	; 1
@@ -147,3 +150,4 @@ id_AxelT:	equ (ptr_AxelT-Ani_Sonic)/2		; $1F
 id_Fall:	equ (ptr_Fall-Ani_Sonic)/2		; $20
 id_Hover:	equ (ptr_Hover-Ani_Sonic)/2		; $21
 id_AirDash: equ (ptr_AirDash-Ani_Sonic)/2	; $22
+id_TapWait:	equ (ptr_TapWait-Ani_Sonic)/2	; $23
