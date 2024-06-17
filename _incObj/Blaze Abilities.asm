@@ -24,6 +24,8 @@ Blaze_Abilities:
 		move.b  #id_Roll, obAnim(a0) ; do the air roll
 		bra	    .ret
 .AirAbilities:
+		move.w	#sfx_Fireball,d0
+		jsr	(PlaySound_Special).l
 		move.b  (v_jpadhold1).w, d0
         andi.b  #btnDn, d0
         bne     .DoHover
