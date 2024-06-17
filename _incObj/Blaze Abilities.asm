@@ -131,5 +131,8 @@ Blaze_SpawnFlame_NoTimer:
 		_move.b	#$4F, obID(a1)
 		move.w	d0, obX(a1)
 		move.w	d1, obY(a1)
+		bra		Blaze_SpawnFlame_Return_NoPop
 Blaze_SpawnFlame_Return:
+		movem.w	(sp)+,d0-d1
+Blaze_SpawnFlame_Return_NoPop:
 		rts
