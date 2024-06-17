@@ -1225,6 +1225,10 @@ PalFadeIn_Alt:				; start position and size are already set
 		bsr.w	WaitForVBla
 		bsr.s	FadeIn_FromBlack
 		bsr.w	RunPLC
+		cmpi.b	#id_LZ,(v_zone).w ; is level LZ?
+		bne		.NoWater
+		bsr		WaterFilter ; generate underwater palette
+.NoWater: 
 		dbf	d4,.mainloop
 		rts	
 ; End of function PaletteFadeIn
@@ -2742,7 +2746,6 @@ Level_SkipTtlCard:
 		jsr	(ConvertCollisionArray).l
 		bsr.w	ColIndexLoad
 		bsr.w	LZWaterFeatures
-		bsr		WaterFilter ; load underwater palette
 		move.b	#id_SonicPlayer,(v_player).w ; load Sonic object
 		tst.w	(f_demo).w
 		bmi.s	Level_ChkDebug
@@ -2842,7 +2845,6 @@ Level_ClrCardArt:
 		jsr	(AddPLC).l	; load animal gfx (level no. + $15)
 
 Level_StartGame:
-		bsr		WaterFilter ; load underwater palette
 		bclr	#7,(v_gamemode).w ; subtract $80 from mode to end pre-level stuff
 
 ; ---------------------------------------------------------------------------
@@ -5828,11 +5830,11 @@ Map_Got:	mappingsTable
 	mappingsTableEntry.w	M_Card_Act3
 	
 M_Got_SonicHas:	spriteHeader		; SONIC HAS
-	spritePiece	-$48, -8, 2, 2, $3E, 0, 0, 0, 0
-	spritePiece	-$38, -8, 2, 2, $32, 0, 0, 0, 0
-	spritePiece	-$28, -8, 2, 2, $2E, 0, 0, 0, 0
-	spritePiece	-$18, -8, 1, 2, $20, 0, 0, 0, 0
-	spritePiece	-$10, -8, 2, 2, 8, 0, 0, 0, 0
+	spritePiece	-$48, -8, 2, 2, $6E, 0, 0, 0, 0
+	spritePiece	-$38, -8, 2, 2, $26, 0, 0, 0, 0
+	spritePiece	-$28, -8, 2, 2, $0, 0, 0, 0, 0
+	spritePiece	-$18, -8, 1, 2, $3E, 0, 0, 0, 0
+	spritePiece	-$10, -8, 2, 2, $10, 0, 0, 0, 0
 	spritePiece	$10, -8, 2, 2, $1C, 0, 0, 0, 0
 	spritePiece	$20, -8, 2, 2, 0, 0, 0, 0, 0
 	spritePiece	$30, -8, 2, 2, $3E, 0, 0, 0, 0
