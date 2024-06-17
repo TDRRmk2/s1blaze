@@ -95,7 +95,7 @@ SonAni_Shrink:	dc.b 3,	fr_Shrink1, fr_Shrink2, fr_Shrink3, fr_Shrink4, fr_Shrink
 SonAni_Hurt:	dc.b 3,	fr_Injury, afEnd
 		even
 SonAni_WaterSlide:
-		dc.b 7, fr_Injury, fr_WaterSlide, afEnd
+		dc.b 7, fr_Injury, $62, afEnd
 		even
 SonAni_Null:	dc.b $77, fr_Null, afChange, id_Walk
 		even

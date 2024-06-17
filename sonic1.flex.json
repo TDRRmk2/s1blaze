@@ -1,7 +1,7 @@
 {
     "Flex": 2,
     "name": "Sonic 1",
-    "node": "b2ad6548-d5f0-46f3-aae7-fc0cca3d5344",
+    "node": "a84a36d5-9c11-4fd5-8774-732be37cd8ce",
     "objects": [
         {
             "format": "Sonic 1.js",
@@ -83,7 +83,7 @@
             "name": "Title screen Blaze",
             "palettes": [
                 {
-                    "path": "palette/Title Screen.bin",
+                    "path": "palette/Level Select.bin",
                     "length": 4
                 }
             ],

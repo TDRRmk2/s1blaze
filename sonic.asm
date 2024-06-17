@@ -2190,8 +2190,8 @@ Tit_ChkLevSel:
 		bsr.w	PalLoad2	; load level select palette
 
 		clearRAM v_hscrolltablebuffer,v_hscrolltablebuffer_end
-
-		move.l	d0,(v_scrposy_vdp).w
+		
+		move.w	#0,(v_bgscrposy_vdp).w
 		disable_ints
 		lea	(vdp_data_port).l,a6
 		locVRAM	$E000
