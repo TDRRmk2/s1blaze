@@ -5829,12 +5829,12 @@ Map_Got:	mappingsTable
 	mappingsTableEntry.w	M_Card_Act2
 	mappingsTableEntry.w	M_Card_Act3
 	
-M_Got_SonicHas:	spriteHeader		; SONIC HAS
-	spritePiece	-$48, -8, 2, 2, $6E, 0, 0, 0, 0
+M_Got_SonicHas:	spriteHeader		; BLAZE HAS
+	spritePiece	-$48, -8, 2, 2, $4, 0, 0, 0, 0
 	spritePiece	-$38, -8, 2, 2, $26, 0, 0, 0, 0
 	spritePiece	-$28, -8, 2, 2, $0, 0, 0, 0, 0
-	spritePiece	-$18, -8, 1, 2, $3E, 0, 0, 0, 0
-	spritePiece	-$10, -8, 2, 2, $10, 0, 0, 0, 0
+	spritePiece	-$18, -8, 2, 2, $4E, 0, 0, 0, 0
+	spritePiece	-$8, -8, 2, 2, $10, 0, 0, 0, 0
 	spritePiece	$10, -8, 2, 2, $1C, 0, 0, 0, 0
 	spritePiece	$20, -8, 2, 2, 0, 0, 0, 0, 0
 	spritePiece	$30, -8, 2, 2, $3E, 0, 0, 0, 0
@@ -5962,12 +5962,12 @@ M_SSR_SpecStage:	spriteHeader		; "SPECIAL STAGE"
 	spritePiece	$54, -8, 2, 2, $10, 0, 0, 0, 0
 M_SSR_SpecStage_End
 
-M_SSR_GotAll:	spriteHeader		; "SONIC GOT THEM ALL"
-	spritePiece	-$78, -8, 2, 2, $3E, 0, 0, 0, 0
-	spritePiece	-$68, -8, 2, 2, $32, 0, 0, 0, 0
-	spritePiece	-$58, -8, 2, 2, $2E, 0, 0, 0, 0
-	spritePiece	-$48, -8, 1, 2, $20, 0, 0, 0, 0
-	spritePiece	-$40, -8, 2, 2, 8, 0, 0, 0, 0
+M_SSR_GotAll:	spriteHeader		; "BLAZE GOT THEM ALL"
+	spritePiece	-$80, -8, 2, 2, $4, 0, 0, 0, 0
+	spritePiece	-$70, -8, 2, 2, $26, 0, 0, 0, 0
+	spritePiece	-$60, -8, 2, 2, $0, 0, 0, 0, 0
+	spritePiece	-$50, -8, 2, 2, $4E, 0, 0, 0, 0
+	spritePiece	-$40, -8, 2, 2, $10, 0, 0, 0, 0
 	spritePiece	-$28, -8, 2, 2, $18, 0, 0, 0, 0
 	spritePiece	-$18, -8, 2, 2, $32, 0, 0, 0, 0
 	spritePiece	-8, -8, 2, 2, $42, 0, 0, 0, 0
