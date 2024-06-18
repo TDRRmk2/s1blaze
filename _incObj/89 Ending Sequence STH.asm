@@ -23,7 +23,7 @@ esth_time = objoff_30		; time until exit
 ESth_Main:	; Routine 0
 		addq.b	#2,obRoutine(a0)
 		move.w	#-$20,obX(a0)	; object starts	outside	the level boundary
-		move.w	#$D8,obScreenY(a0)
+		move.w	#$00,obScreenY(a0)
 		move.l	#Map_ESth,obMap(a0)
 		move.w	#make_art_tile(ArtTile_Ending_STH,0,0),obGfx(a0)
 		move.b	#0,obRender(a0)
